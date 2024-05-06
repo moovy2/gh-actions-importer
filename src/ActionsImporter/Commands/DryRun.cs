@@ -20,6 +20,8 @@ public class DryRun : BaseCommand
         command.AppendCommonOptions();
 
         command.AddCommand(new AzureDevOps.DryRun(_args).Command(app));
+        command.AddCommand(new Bamboo.DryRun(_args).Command(app));
+        command.AddCommand(new Bitbucket.DryRun(_args).Command(app));
         command.AddCommand(new Circle.DryRun(_args).Command(app));
         command.AddCommand(new GitLab.DryRun(_args).Command(app));
         command.AddCommand(new Jenkins.DryRun(_args).Command(app));

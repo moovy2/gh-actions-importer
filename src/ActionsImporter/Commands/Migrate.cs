@@ -42,6 +42,8 @@ public class Migrate : BaseCommand
         command.AddGlobalOption(CommitMessage);
 
         command.AddCommand(new AzureDevOps.Migrate(_args).Command(app));
+        command.AddCommand(new Bamboo.Migrate(_args).Command(app));
+        command.AddCommand(new Bitbucket.Migrate(_args).Command(app));
         command.AddCommand(new Circle.Migrate(_args).Command(app));
         command.AddCommand(new GitLab.Migrate(_args).Command(app));
         command.AddCommand(new Jenkins.Migrate(_args).Command(app));
